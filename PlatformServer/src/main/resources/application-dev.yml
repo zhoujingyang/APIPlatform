@@ -1,0 +1,27 @@
+server:
+   port: 8888
+logging:
+    path: logs
+    file: platform.log
+
+#   测试环境：java -jar SDK-Server-1.0-SNAPSHOT.jar --spring.profiles.active=test
+#   生产环境：java -jar SDK-Server-1.0-SNAPSHOT.jar --spring.profiles.active=prod
+
+
+
+spring:
+   application:
+          name: platform
+   datasource:
+       driver-class-name: com.mysql.jdbc.Driver
+       url: jdbc:mysql://10.100.46.162:8806/SDK
+       username: admin
+       password: 123456
+
+mybatis:
+    type-aliases-package: com.test.platform.model
+    mapper-locations:
+       - mapper/*
+file:
+    #SDK调用识别结果存储路径
+    path: /workspace/eval/result/
